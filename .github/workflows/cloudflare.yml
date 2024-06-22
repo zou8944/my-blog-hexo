@@ -1,5 +1,4 @@
-# Sample workflow for building and deploying a Hugo site to GitHub Pages
-name: Deploy Hugo site to Pages
+name: Deploy to Cloudflare Pages
 
 on:
   push:
@@ -16,8 +15,7 @@ jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
-    env:
-      HUGO_VERSION: 0.124.1
+    environment: production
     steps:
       - uses: actions/checkout@v3
 
@@ -44,11 +42,11 @@ jobs:
         run: npm ci
 
       - name: Build the site
-        run: npx hexo generate
+        run: |
+          make fetch_post
+          npx hexo generate
 
       - name: Deploy to Cloudflare Pages
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         run: |
-          echo CLOUDFLARE_API_TOKEN=${{ env.CLOUDFLARE_API_TOKEN }} > .env
+          echo CLOUDFLARE_API_TOKEN=${{ secrets.CLOUDFLARE_API_TOKEN }} > .env
           npx wrangler pages deploy ./public --project-name blog --branch main
