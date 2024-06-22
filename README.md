@@ -11,7 +11,9 @@
 ## 开发
 
 ```shell
-# 拉取 My Words 生成静态页面
+# 拉取博客文章
+make fetch_post
+# 生成静态页面
 make generate
 # 启动本地服务
 make server
