@@ -36,6 +36,7 @@ echo "生成 thoughts 页面 ..."
 python generate_thoughts.py cache/my-words-main/thoughts > cache/thoughts_index.md
 
 echo "移动 thoughts 页面到指定位置 ..."
+mkdir -p ../source/thoughts/
 cp cache/thoughts_index.md ../source/thoughts/index.md
 
 cd ..
