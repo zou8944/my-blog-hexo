@@ -5,6 +5,9 @@ show_heart: true
 show_slogan: true
 
 menu:
+  - title: 小想法
+    url: thoughts
+    intro: "小想法"
   - title: 归档
     url: archives
     intro: "归档"
