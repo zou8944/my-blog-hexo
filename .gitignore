@@ -1,6 +1,6 @@
 .idea
 .vscode
-node_modules
+**/node_modules
 scripts/cache
 source/_posts
 db.json
