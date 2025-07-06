@@ -45,7 +45,7 @@ jobs:
 
       - name: Build the site
         run: |
-          make fetch_post
+          make build
           npx hexo generate
 
       - name: Deploy to Cloudflare Pages

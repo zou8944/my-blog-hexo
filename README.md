@@ -12,7 +12,7 @@
 
 ```shell
 # 拉取博客文章
-make fetch_post
+make build
 # 生成静态页面
 make generate
 # 启动本地服务

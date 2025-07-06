@@ -8,13 +8,16 @@ menu:
   - title: 小想法
     url: thoughts
     intro: "小想法"
-  - title: 归档
+  - title: 文章
     url: archives
-    intro: "归档"
+    intro: "文章"
+  - title: 新闻
+    url: newsletters
+    intro: "新闻"
     # icon: "fa fa-archive"
-  - title: 分类
-    url: categories
-    intro: "所有分类"
+  # - title: 分类
+  #   url: categories
+  #   intro: "所有分类"
     # icon: "fa fa-folder"
   - title: 标签
     url: tags

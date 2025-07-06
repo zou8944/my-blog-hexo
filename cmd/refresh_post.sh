@@ -3,6 +3,12 @@
 echo "移除文章 ..."
 rm -rf ./source/_posts/*
 
+echo "移除 thoughts 页面 ..."
+rm -rf ./source/thoughts/*
+
+echo "移除 newsletters 页面 ..."
+rm -rf ./source/newsletters/*
+
 echo "清除缓存 ..."
 rm -rf ./cmd/cache
 
@@ -38,6 +44,13 @@ python generate_thoughts.py cache/my-words-main/thoughts > cache/thoughts_index.
 echo "移动 thoughts 页面到指定位置 ..."
 mkdir -p ../source/thoughts/
 cp cache/thoughts_index.md ../source/thoughts/index.md
+
+echo "生成 newsletters 页面 ..."
+python generate_newsletters.py cache/my-words-main/newsletters
+
+echo "移动 newsletters 页面到指定位置 ..."
+mkdir -p ../source/newsletters/
+cp -r cache/my-words-main/newsletters/* ../source/newsletters/
 
 cd ..
 
