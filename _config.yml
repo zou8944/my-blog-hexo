@@ -8,13 +8,13 @@ subtitle: Hello Jellyyyyyyyyyyyyyy !!
 description: Beat Jelly; Hit Jelly; Kill Jelly.
 keywords: 果冻 博客
 author: 果冻 | Jelly
-language: zh-CN
+language: zh-Hans
 timezone: Asia/Shanghai
 
-menu:
-  home: /
-  archives: /archives
-  categories: /categories
+# menu:
+#   home: /
+#   archives: /archives
+#   categories: /categories
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -84,7 +84,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: freemind
+theme: next
 
 # Comment
 duoshuo:
