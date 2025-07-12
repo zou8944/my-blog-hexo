@@ -100,3 +100,10 @@ sitemap:
   path: sitemap.xml
 baidusitemap:
   path: baidusitemap.xml
+
+
+# 如下手动增加
+archive_generator:
+  per_page: 0   # 0 表示显示所有文章，不分页
+  yearly: true
+  monthly: true
