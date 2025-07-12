@@ -62,7 +62,21 @@ def generate_new_content(post_path):
                 has_more = True
                 break
         if not has_more:
-            content_lines.insert(5, "<!-- more -->")
+            insert_pos = None
+            non_empty_count = 0
+            insert_pos = None
+            for idx, line in enumerate(content_lines):
+                if line.strip() == "":
+                    continue
+                non_empty_count += 1
+                if line.strip().startswith("```") and non_empty_count <= 5:
+                    insert_pos = idx
+                    break
+                if non_empty_count == 5:
+                    insert_pos = idx
+                    break
+            if insert_pos is not None:
+                content_lines.insert(insert_pos, "<!-- more -->")
 
     final_lines = front_matter_lines + [""] + content_lines
     return "\n".join(final_lines)
@@ -84,7 +98,7 @@ def fix_all_post(post_dir):
                 fix_post(os.path.join(root, file))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # file_path = sys.argv[1]
     # fix_post("cache/my-words-main/posts/2018/Git 介绍.md")
     fix_all_post(sys.argv[1])
